@@ -1,0 +1,26 @@
+agentfleet/
+├── backend/                  # Python Fleet Manager
+│   ├── main.py               # Core fleet manager loop
+│   ├── models.py             # Pydantic models
+│   ├── agents.py             # Child agent runner
+│   ├── queue.py              # Task queue (Supabase or Redis)
+│   ├── monitor.py            # Health checks + restarts
+│   ├── config.py
+│   └── requirements.txt
+│
+├── frontend/                 # Next.js Dashboard
+│   ├── app/
+│   │   ├── dashboard/
+│   │   ├── missions/
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   ├── lib/
+│   └── package.json
+│
+├── supabase/                 # Schema + migrations
+│   └── schema.sql
+│
+├── docker-compose.yml
+├── README.md
+└── .env.example
