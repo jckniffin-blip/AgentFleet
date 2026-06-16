@@ -1,31 +1,32 @@
 # AgentFleet
 
-Agent Manager - A comprehensive system for managing and orchestrating multiple AI agents.
+**Parallel AI Agent Fleets that ship while you sleep.**
 
-## Overview
+Hierarchical agent orchestration platform inspired by Cursor's internal system. One fleet manager + hundreds of child agents with monitoring, auto-restart, and human escalation.
 
-AgentFleet is designed to provide a unified platform for managing, coordinating, and monitoring multiple AI agents across different tasks and workflows.
+[GitHub](https://github.com/jckniffin-blip/AgentFleet) • [Join Waitlist](#) • [Demo](#)
 
-## Features
+## ✨ Features
+- Hierarchical Fleet Manager (supervisor + workers)
+- Automatic health checks & restarts
+- Task distribution & result aggregation
+- Cost controls + Slack/PagerDuty alerts
+- Parallel execution (10–1000+ agents)
+- Built for Cursor, Claude, Grok, and OpenAI agents
 
-- Multi-agent orchestration
-- Task management and scheduling
-- Agent health monitoring
-- Resource allocation
-- Distributed task execution
+## Quick Start
 
-## Project Structure
+```bash
+# Clone
+git clone https://github.com/jckniffin-blip/AgentFleet.git
+cd AgentFleet
 
-```
-AgentFleet/
-├── src/              # Source code
-├── tests/            # Test suites
-├── docs/             # Documentation
-├── config/           # Configuration files
-├── examples/         # Example agents and workflows
-└── scripts/          # Utility scripts
-```
+# Backend
+cd backend
+uv sync
+uv run main.py
 
-## Getting Started
-
-See the [documentation](./docs) for setup and usage instructions.
+# Frontend
+cd ../frontend
+npm install
+npm run dev
