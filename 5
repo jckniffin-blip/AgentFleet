@@ -1,0 +1,17 @@
+create table missions (
+  id text primary key,
+  goal text,
+  num_agents int,
+  status text,
+  created_at timestamp default now()
+);
+
+create table tasks (
+  id text primary key,
+  mission_id text references missions(id),
+  prompt text,
+  assigned_to text,
+  status text,
+  result jsonb,
+  updated_at timestamp default now()
+);
