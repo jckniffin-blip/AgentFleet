@@ -1,0 +1,18 @@
+import asyncio
+from anthropic import AsyncAnthropic
+
+client = AsyncAnthropic()
+
+async def run_child_agent(task: Task):
+    """Example child agent using Claude (or Cursor-like setup)"""
+    prompt = f"""You are a specialized agent in a fleet.
+Goal: {task.prompt}
+
+Work step-by-step and return structured JSON result."""
+    
+    response = await client.messages.create(
+        model="claude-3-5-sonnet-20240620",
+        max_tokens=2000,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    return {"result": response.content, "agent_id": "child-001"}
